@@ -6,20 +6,21 @@ body {
     transition: background-color 0.5s, color 0.5s; 
 }
 .dark-mode { 
-    background-color: #ff0000; 
-    color: #00fff2; 
+    background-color: #2b2a2a; 
+    color: #ffffff; 
 }
 #app-container { 
-    max-width: 60px; 
+    max-width: 600px; 
+    
     margin: auto; 
     background: white; 
-    padding: 20px; 
+    padding: 20px 30px; 
     border-radius: 45px; 
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
     transition: background-color 0.5s; 
 }
 .dark-mode #app-container { 
-    background-color: #c500f6; 
+    background-color: #000000; 
 }
 #new-note-input { 
     width: 80%; 
@@ -66,9 +67,9 @@ body {
     cursor: pointer; 
     color: #dc3545; 
 }
-.note-yellow { background-color: #ffc; }
-.note-blue { background-color: #ccf; }
-.note-pink { background-color: #fcc; }
+.note-yellow { background-color: rgb(255, 217, 103); }
+.note-blue { background-color: rgb(74, 165, 255); }
+.note-pink { background-color: rgb(255, 127, 206); }
 #toggle-theme-button { 
     padding: 8px 12px; 
     border: none; 

@@ -3,7 +3,7 @@ const addButton = document.getElementById('add-note-button');
 const notesContainer = document.getElementById('notes-container');
 const toggleThemeButton = document.getElementById('toggle-theme-button');
 const body = document.body;
-const colors = ['note-yellow'];
+const colors = ['note-yellow', "note-blue", "note-pink", ""]; // COLORES
 
 function createNoteElement(text, colorClass) {
     const noteDiv = document.createElement('div');
@@ -38,8 +38,9 @@ function setInitialTheme() {
     }
 }
 
+
 noteInput.addEventListener('input', () => {
-    addButton.disabled = noteInput.value.trim() === '';
+   addButton.disabled = noteInput.value.trim() === '';
 });
 
 toggleThemeButton.addEventListener('click', () => {
@@ -90,7 +91,7 @@ addButton.addEventListener('click', () => {
         const newNote = createNoteElement(noteText, randomColor);
         notesContainer.appendChild(newNote);
         const newNoteErr = createNoteElement(noteText, randomColor);
-        notesContainer.appendChild(newNoteErr);
+        //Repetida
         noteInput.value = '';
         addButton.disabled = true;
         saveNotes();
@@ -115,6 +116,18 @@ notesContainer.addEventListener('mouseout', (event) => {
         event.target.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
     }
 });
+
+function loadNotes() {
+    const savednotes = localStorage.getItem("notes");
+    if (savednotes) {
+        const notesArray = JSON.parse(savedTasks);
+        notesArray.forEach(task => createNotesElement(notes));
+    }
+}
+
+
+
+
 
 setInitialTheme();
 loadNotes();
